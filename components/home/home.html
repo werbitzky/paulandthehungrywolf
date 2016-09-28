@@ -1,0 +1,159 @@
+<section class="l-section l-navigation">
+  <div class="l-row l-row-nav">
+    <div class="l-nav-col">
+      <div class="l-nav-left">
+
+        <nav class="nav">
+          <ul class="links">
+            <li><a href="#news">News</a></li>
+            <li><a href="#music">Music</a></li>
+            <li><a href="#dates">Dates</a></li>
+            <li><a href="#photos">Photos</a></li>
+            <li><a href="#signup">Signup</a></li>
+          </ul>
+        </nav>
+
+      </div>
+      <div class="l-nav-right">
+
+        <nav class="nav nav-right">
+          <ul class="links">
+            <li><a href="https://www.facebook.com/paulandthehungrywolf" target="_blank">Facebook</a></li>
+            <li><a href="https://soundcloud.com/paulandthehungrywolf" target="_blank">Soundcloud</a></li>
+            <li><a href="https://www.residentadvisor.net/dj/paulandthehungrywolf" target="_blank">Resident Advisor</a></li>
+            <li><a href="mailto:contact@paulandthehungrywolf.com">Contact</a></li>
+          </ul>
+        </nav>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="l-section l-logo-section">
+  <div class="l-row l-row-logo">
+    <div class="l-logo-col">
+
+      <h1 class="logo">
+        Paul<br />
+        and<br />
+        The<br />
+        Hungry<br />
+        Wolf
+      </h1>
+
+    </div>
+  </div>
+</section>
+
+<section class="l-section l-news-section" id="news">
+  <div class="l-row">
+    <div class="l-news-col">
+      <div class="news">
+        <h2 class="news-date">What's going on</h2>
+        <div class="news-text" [innerHTML]="post?.caption"></div>
+        <a href="https://paulandthehungrywolf.tumblr.com" target="_blank">...read more</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="l-section l-music-section" id="music">
+  <div class="l-row">
+    <h2>Listen to some music</h2>
+    <div class="l-music-col">
+      <div class="music">
+        <iframe scrolling="no" frameborder="no" id="music-iframe-1" class="music-iframe"></iframe>
+      </div>
+    </div>
+    <div class="l-music-col">
+      <div class="music">
+        <iframe scrolling="no" frameborder="no" id="music-iframe-2" class="music-iframe"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="l-section l-dates-section" id="dates">
+  <div class="l-row">
+    <h2>Dance Together</h2>
+    <div class="l-dates-row">
+      <a *ngFor='#event of bandsintownData' href="{{event.ticket_url || 'https://www.bandsintown.com/PaulAndTheHungryWolf'}}" class="dates-link" target="_blank">
+        <span class="uppercase">{{getMonth(event.datetime)}} {{getDay(event.datetime)}} {{event.venue.name}}</span>, {{event.venue.city}}, {{event.venue.country}}
+      </a>
+      <a class="dates-link track-link" href="https://www.bandsintown.com/PaulAndTheHungryWolf">...track us</a>
+    </div>
+  </div>
+</section>
+
+<section class="l-section l-photos-section" id="photos">
+  <div class="l-row-photos l-row">
+    <h2>Sharing Memories</h2>
+    <div class="l-photos-col" *ngFor='#insta of instaData'>
+      <a [href]="insta.link" target="_blank" class="photo-link">
+        <img [src]="insta.images.low_resolution.url" />
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="l-section l-signup-section" id="signup">
+  <div class="l-row">
+    <h2>Let's Stay in Touch</h2>
+    <p>get a mail when we have
+    <br/>good stuff for you!</p>
+    <div class="l-signup-col">
+      <div class="l-signup-container">
+        <div id="mc_embed_signup">
+          <form
+            ngNoForm
+            action="https://paulandthehungrywolf.us3.list-manage.com/subscribe/post?u=9a9df77a95699e93c66f3c6b1&amp;id=d7e6ef978b"
+            method="POST"
+            id="mc-embedded-subscribe-form"
+            name="mc-embedded-subscribe-form"
+            target="_blank">
+            <div id="mc_embed_signup_scroll">
+              <div class="mc-field-group">
+              	<label for="mce-FNAME">first name  <span class="asterisk">*</span>
+                </label>
+              	<input type="text" value="" name="FNAME" class="required" id="mce-FNAME" (focus)="setInput('FNAME')" (blur)="setInput(false)">
+                <!--<p *ngIf="currentInput=='FNAME'" class="helptext"></p>-->
+              </div>
+              <div class="mc-field-group">
+              	<label for="mce-YCITY">city </label>
+              	<input type="text" value="" name="YCITY" class="" id="mce-YCITY" (focus)="setInput('YCITY')" (blur)="setInput(false)">
+                <p *ngIf="currentInput=='YCITY'" class="helptext">so we can let you know when we're in town</p>
+              </div>
+              <div class="mc-field-group">
+              	<label for="mce-EMAIL">email <span class="asterisk">*</span>
+                </label>
+              	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" (focus)="setInput('EMAIL')" (blur)="setInput(false)">
+                <!--<p *ngIf="currentInput=='EMAIL'" class="helptext"></p>-->
+              </div>
+            	<div id="mce-responses" class="clear">
+            		<div class="response" id="mce-error-response" style="display:none"></div>
+            		<div class="response" id="mce-success-response" style="display:none"></div>
+            	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+              <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                <input type="text" name="b_9a9df77a95699e93c66f3c6b1_d7e6ef978b" tabindex="-1" value="">
+              </div>
+              <div class="clear" style="text-align: center;">
+                <input type="submit" value="send" name="subscribe" id="mc-embedded-subscribe" class="button">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="l-section l-signup-section" id="signup">
+  <div class="l-row l-signup-row">
+    <div class="l-impressum-col">
+      <p class="impressum-text">
+        paulandthehungrywolf.com <br/>
+        Made by <a href="https://www.facebook.com/werbitzky" target="_blank">El Werbitzky</a> | <a href="assets/impressum.html" target="_blank">Impressum</a></p>
+    </div>
+  </div>
+</section>

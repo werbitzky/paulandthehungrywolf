@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="/">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Paul and The Hungry Wolf</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- inject:css -->
+  <!-- endinject -->
+</head>
+<body>
+
+  <app></app>
+
+  <!-- shims:js -->
+  <script src="/lib/es6-shim.min.js"></script>
+  <script src="/lib/Reflect.js"></script>
+  <script src="/lib/system.src.js"></script>
+  <script src="/lib/angular2-polyfills.js"></script>
+  <!-- endinject -->
+  <script>var APP_ENV = 'prod';</script>
+  <script>System.config({"defaultJSExtensions":true,"bundles":{"bundles/app":["bootstrap"]}})</script>
+
+  <!-- libs:js -->
+  <script src="/lib/jquery.js"></script>
+  <script src="/lib/Rx.min.js"></script>
+  <script src="/lib/angular2.js"></script>
+  <script src="/lib/router.js"></script>
+  <script src="/lib/http.js"></script>
+  <script src="/lib/soundcloud.js"></script>
+  <!-- endinject -->
+
+  <script>
+    System.import('bootstrap')
+      .catch(function (e) {
+        console.error(e,
+          'Report this error at https://github.com/mgechev/angular2-seed/issues');
+      });
+  </script>
+
+  <!-- inject:js -->
+  <!-- endinject -->
+
+</body>
+</html>
